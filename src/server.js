@@ -100,8 +100,12 @@ sequelize.sync().then(()=>{
     console.log("tables created successfully");
 })
 
+const config = require('../config.dev.json')
+const port = config.SERVER_PORT
+const IPAddress = config.SERVER_IP
+
 const server = http.createServer(app);
-server.listen(3000, '127.0.0.1', ()=>{
+server.listen(port, IPAddress, ()=>{
     console.log('server started');
 })
 
