@@ -1,8 +1,10 @@
 const { Sequelize, DataTypes } = require('sequelize');
+const config = require('../config.dev.json');
+const database = config.DB_ADDRESS;
 
 
 
-const sequelizeConnection = new Sequelize('postgres://hunterstorm:DigitalCrafts@cloud-database-instance.ccpqgrq3czty.us-west-2.rds.amazonaws.com:5432/cloud_database', {
+const sequelizeConnection = new Sequelize(database, {
   define: {
     timestamps: false,
     schema: 'h_a_db',
